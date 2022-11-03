@@ -1,6 +1,9 @@
-FROM adoptopenjdk/openjdk11:debian-slim
+FROM adoptopenjdk/openjdk14:debian-slim
 
-RUN apt update && apt install -y nodejs npm python3 python3-pip jq curl bash git docker && \
+RUN apt-get install -y curl \
+  && curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
+
+RUN apt update && apt install -y python3 python3-pip jq curl bash git docker && \
 	ln -sf /usr/bin/python3 /usr/bin/python
 
 COPY entrypoint.sh /entrypoint.sh
@@ -13,6 +16,7 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
  && rm -f /tmp/apache-maven.tar.gz \
  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
  && echo $JAVA_HOME
+
 
 ENV MAVEN_HOME /usr/share/maven
 
