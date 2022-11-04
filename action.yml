@@ -31,4 +31,4 @@ outputs:
     description: 'Returned status code.'
 runs:
   using: 'docker'
-  image: 'docker://roechi/aws-java-cdk-github-actions:v1.8'
+  image: 'docker://roechi/aws-java-cdk-github-actions:latest'
