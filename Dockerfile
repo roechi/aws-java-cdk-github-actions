@@ -6,6 +6,9 @@ RUN apt-get install -y curl \
 RUN apt update && apt install -y python3 python3-pip jq curl bash git docker && \
 	ln -sf /usr/bin/python3 /usr/bin/python
 
+RUN node -v
+RUN npm -v
+
 COPY entrypoint.sh /entrypoint.sh
 
 ARG USER_HOME_DIR="/root"

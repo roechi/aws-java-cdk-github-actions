@@ -1,4 +1,4 @@
-name: 'AWS CDK GitHub Actions with Java 11'
+name: 'AWS CDK GitHub Actions with Java 14'
 description: 'Runs AWS-CDK via GitHub Actions.'
 author: 'roechi <roechi@posteo.de>'
 branding:
@@ -31,4 +31,4 @@ outputs:
     description: 'Returned status code.'
 runs:
   using: 'docker'
-  image: 'docker://roechi/aws-java-cdk-github-actions:v1.5'
+  image: 'docker://roechi/aws-java-cdk-github-actions:v1.8'
