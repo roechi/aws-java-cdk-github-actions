@@ -15,7 +15,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag roechi/aws-java-cdk-github-actions:${{ github.event.release.tag_name }}
 
-    - uses: elgohr/Publish-Docker-Github-Action@master
+    - uses: elgohr/Publish-Docker-Github-Action@v5
       name: Publish to Registry
       with:
         name: roechi/aws-java-cdk-github-actions:${{ github.event.release.tag_name }}
